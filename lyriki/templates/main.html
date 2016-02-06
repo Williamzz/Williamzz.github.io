@@ -48,13 +48,68 @@
         background-size: cover;
         opacity: 0.8;
     }
+       .content {
+      /* Make the content take up half of the screen horizontally, but not larger than 500px */
+      width: 70%;
+      max-width: 1750px;
+      height: 60%;
+      max-height: 500px;
+
+      /* put a margin to the top and bottom of 100px, and center the content vertically */
+      margin: auto;
+
+      /* put a border around the text content */
+      padding: 50px;
+
+      /* Make the content's background white */
+      background-color: white;
+      opacity: 0.75;
+      ;
+    }
+    .btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #f1f1f1;
+    border-radius: 0;
+    transition: .2s;
+    }
+
+/* On hover, the color of .btn will transition to white with black text */
+    .btn:hover, .btn:focus {
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #000;
+    }
+    
     </style>
     <div class="pic"></div>
     <div class="jumbotron text-center">
         <h1>Lyriki</h1> 
         <p>Automatically put your lyrics to music!</p>
     </div>
+    <div>
+    <div class="text-center content">
+    <h2>Step1:  Choose your mood:</h2>
+    <button class="btn">Passionate</button>    
+    <button class="btn">Emotional</button>
+    <button class="btn">Happy</button>
+    <button class="btn">Cool</button>
+    <button class="btn">Mysterious</button>
+    </div>
+    </div>
 
+    <div>
+    <div class="text-center content">
+    <h2>Step2:  Choose your Key:</h2>
+    <button class="btn">C</button>   
+    <button class="btn">D</button>
+    <button class="btn">E</button>
+    <button class="btn">F</button>
+    <button class="btn">G</button>
+    <button class="btn">A</button>
+    <button class="btn">B</button>
+    </div>
+    </div>
     <div class="container-fluid text-center">
         <h2>Enter your lyrics:</h2>
         <form class="form-inline" action="/get_lyrics" method="post">
@@ -66,6 +121,18 @@
     <div class="container-fluid bg-grey">
     </div>
 
+    <div class="text-center content">
+    <p>Links:</p>
+        <a href="https://www.facebook.com">facebook</a>
+        <a href="https://github.com">github</a>
+        <a href="https://www.cmu.edu">cmu</a>
+    </div>
+
+    <div class="text-center content">
+      Copyright 2016.
+      Taisuke Yasuda, Zhen Zhou, Riki Khorana
+    </div>
+    
     <div
         class="fb-like"
         data-share="true"
