@@ -145,6 +145,11 @@ def add_chords(MyMIDI,chords,key):
             pitch = note + key
             time = i
             MyMIDI.addNote(TRACK,CHANNEL,pitch,time,DURATION,LOW)
+    chord = chords[1]
+    for note in chord:
+        pitch = note + key
+        time = len(chords)
+        MyMIDI.addNote(TRACK,CHANNEL,pitch,time,10,LOW)
     return MyMIDI
 
 def add_notes(MyMIDI,syllables,key,chords):
