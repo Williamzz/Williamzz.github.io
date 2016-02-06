@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lyriki</title>
+    <title>Welcome to Lyriki!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<!--   // <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  // <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+  <link rel="stylesheet" type="text/css" href="../static/index.css">
 </head>
 <body>
+    <div class="background"></div>
     <script>
         window.fbAsyncInit = function() {
             FB.init({
@@ -21,7 +28,27 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-    <h1>Hey!</h1>
+
+    <div class="container text-center">
+      <h3><em>Lyriki</em></h3>
+      <p>We all love music!</p>
+      <p>Everyone wants to create their own song, isn't it?</p>
+    </div>
+
+    <div class="row text-center">
+    <div class="col-sm-4">
+      <p><strong>Taisuke Yasuda</strong></p><br>
+      <img src="tai.jpg" alt="Random Name">
+    </div>
+    <div class="col-sm-4">
+      <p><strong>William Zhou</strong></p><br>
+      <img src="will.jpg" alt="Random Name">
+    </div>
+    <div class="col-sm-4">
+      <p><strong>Riki Khorana</strong></p><br>
+      <img src="bandmember.jpg" alt="Random Name">
+    </div>
+
 
     <div
         class="fb-like"
@@ -29,5 +56,21 @@
         data-width="450"
         data-show-faces="true">
     </div>
+
+    <div class="links">
+      <div class="link">
+        <a href="https://www.facebook.com">facebook</a>
+      </div>
+      <div class="link">
+        <a href="https://github.com">github</a>
+      </div>
+      <div class="link">
+        <a href="https://www.cmu.edu">cmu</a>
+    </div>
+
+    <footer>
+    Copyright 2016, TartanHacks2016
+    </footer>
 </body>
+
 </html>
