@@ -16,11 +16,11 @@ def hello():
 @app.route("/")
 def index():
     return render_template("index.html")
-    
-@app.route("/",method=['POST'])
-def getLyrics():
-    lyrics = request.form.get("lyrics")
-    return redirect('/')
+
+# @app.route("/getLyrics", method=['POST'])
+# def getLyrics():
+#     lyrics = request.form.get("lyrics")
+#     return redirect('/')
 
 if __name__ == "__main__":
     app.run()
