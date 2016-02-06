@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../static/main.css" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -45,8 +45,7 @@
       margin: auto;
       padding: 50px;
       background-color: white;
-      opacity: 0.75;
-      ;
+      opacity: 0.65;
     }
     .btn {
     padding: 10px 20px;
@@ -73,11 +72,58 @@
     .modal-header, .modal-body {
     padding: 40px 50px;
     }
-
-    <script>
-
-    </style>
     
+
+    #key_container {
+        margin: auto;
+    }
+
+    .settings {
+
+    list-style-type:none;
+    margin:25px 0 0 0;
+    padding:0;
+    }
+
+    .settings li {
+    float:left;
+    margin:0 5px 0 0;
+    width:100px;
+    height:40px;
+    position:relative;
+    }
+
+    .settings label, .settings input {
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    }
+
+    .settings input[type="radio"] {
+    opacity:0.01;
+    z-index:100;
+    }
+
+    .settings input[type="radio"]:checked + label,
+    .Checked + label {
+    background: black;
+    color: white;
+    }
+
+    .settings label {
+    padding:5px;
+    border:1px solid #CCC; 
+    cursor:pointer;
+    z-index:90;
+    }
+
+    .settings label:hover {
+    background:#DDD;
+    }
+    }
     </style>
     <div class="pic"></div>
     <div class="jumbotron text-center">
@@ -85,39 +131,78 @@
         <p><em>Automatically put your lyrics to music!</em></p>
     </div>
 
-    <div>
     <div class="text-center content">
     <h2>Step1:  Choose your mood:</h2>
-    <button class="btn" onclick="" id="Passionate">Passionate</button>
-    <button class="btn" onclick=""id="Emotional">Emotional</button>
-    <button class="btn">Happy</button>
-    <button class="btn">Cool</button>
-    <button class="btn">Mysterious</button>
-    </div>
+    <form action="/get_settings" method="post">
+        <div>
+        <ul class="settings">
+        <li>
+            <input class="settings" type="radio" value="mood1" name="mood" id="mood1"/>
+            <label for="mood1">Passionate</label>
+        </li>
+        <li>
+            <input class="settings" type="radio" value="mood2" name="mood" id="mood2"/>
+            <label for="mood2">Emotional</label>
+        </li>
+        <li>
+            <input class="settings" type="radio" value="mood3" name="mood" id="mood3"/>
+            <label for="mood3">Happy</label>
+        </li>
+        <li>
+            <input class="settings" type="radio" value="mood4" name="mood" id="mood4"/>
+            <label for="mood4">Cool</label>
+        </li>
+        </ul>
+        </div>
+        <br><br><br>
+        <h2>Step2:  Choose your Key:</h2>
+        <div class="settings" id="key_container">
+        <ul class="settings">
+        <li>
+            <input type="radio" value="C" name="key" id="c"/>
+            <label for="c">C</label>
+        </li>
+        <li>
+            <input type="radio" value="D" name="key" id="d"/>
+            <label for="d">D</label>
+        </li>
+        <li>
+            <input type="radio" value="E" name="key" id="e"/>
+            <label for="e">E</label>
+        </li>
+        <li>
+            <input type="radio" value="F" name="key" id="f"/>
+            <label for="f">F</label>
+        </li>
+        <li>
+            <input type="radio" value="G" name="key" id="g"/>
+            <label for="g">G</label>
+        </li>
+        <li>
+            <input type="radio" value="A" name="key" id="a"/>
+            <label for="a">A</label>
+        </li>
+        <li>
+            <input type="radio" value="B" name="key" id="b"/>
+            <label for="b">B</label>
+        </li>
+        </ul>
     </div>
 
-    <div>
-    <div class="text-center content">
-    <h2>Step2:  Choose your Key:</h2>
-    <button class="btn">C</button>   
-    <button class="btn">D</button>
-    <button class="btn">E</button>
-    <button class="btn">F</button>
-    <button class="btn">G</button>
-    <button class="btn">A</button>
-    <button class="btn">B</button>
-    </div>
-    </div>
+    <br><br><br>
 
-    <div class="container-fluid text-center content">
+    <div class="container-fluid text-center">
     <p></p>
-        <h2>Step3:  Enter your lyrics:</h2>
-        <form class="form-inline" action="/get_lyrics" method="post">
-            <input type="text" class="form-control" size="50" name="lyrics" id="lyrics" line="30" placeholder="Your lyrics here">
-            <input type="submit" value="Magic!">
-        </form>
+        <h2>Step3:  Enter your Lyrics:</h2>
+        <input type="text" class="form-control" size="50" name="lyrics" id="lyrics" line="30" placeholder="Your lyrics here"/>
         <p>Your lyrics should not exceed 140 characters.</p>
     </div> 
+
+    <br><br>
+
+    <input type="submit" value="Make a Song!"/>
+    </form>
+    </div>
 
     <div class="container-fluid text-center content">
     <h2>Not the perfect Key?</h2>
@@ -139,7 +224,7 @@
       </div>
       <div class="col-md-4">
           <p>Riki Singh Khorana</p> 
-          <img src="../static/photos/Riki.jpg" alt="Riki" style="width:150px;height:150px">
+          <img src="../static/photos/Riki.JPG" alt="Riki" style="width:150px;height:150px">
       </div>
     </div>
     </div>

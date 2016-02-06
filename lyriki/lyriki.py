@@ -13,7 +13,6 @@ def hello():
     return "Hello World!"
 
 @app.route("/index")
-@app.route("/")
 def index():
     return render_template("index.html")
 
@@ -24,7 +23,30 @@ def get_lyrics():
     print(lyrics)
     return redirect('/main')
 
+@app.route('/get_mood', methods=['POST'])
+def get_mood():
+    mood = request.form.get('mood')
+    print(mood)
+    return redirect('/main')
+
+@app.route('/get_settings', methods=['POST'])
+def get_settings():
+    mood = request.form.get('mood')
+    key = request.form.get('key')
+    lyrics = request.form.get('lyrics')
+    print(mood)
+    print(key)
+    print(lyrics)
+    return redirect('/main')
+
+@app.route('/get_key', methods=['POST'])
+def get_key():
+    key = request.form.get('key')
+    print(key)
+    return redirect('/main')
+
 @app.route("/main")
+@app.route("/")
 def main():
     return render_template("main.html")
 
