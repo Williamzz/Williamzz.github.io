@@ -13,7 +13,13 @@ midi = {60:'c',62:'d',64:'e',65:'f',67:'g',69:'a',71:'b'}
 c = [60,64,67]
 f = [60,65,69]
 g = [55,62,65]
+cs = [61,65,68]
+eb = [63,67,70]
+cm = [60,63,67]
+gm = [55,58,62]
 happy1 = [c,c,c,c,f,f,f,f,g,g,g,g,c,c,c,c,f,f,f,f,g,g,g,g,g,g,g,g,c,c,c,c]
+pass1 = [c,c,c,c,cs,cs,cs,cs,c,c,c,c,cs,cs,cs,cs,c,cs,eb,cs,c,cs,c,cs,c,c,c,c,cs,cs,c,cs]
+cool1 = [cm,cm,cm,cm,bb,bb,bb,bb,dm,dm,dm,dm,c,c,c,c,cm,cm,cm,cm,bb,bb,bb,bb,dm,dm,dm,dm,c,c,c,c]
 
 ########################### Next Note ###############################
 
@@ -117,8 +123,12 @@ def play_song():
 def make_song_file(mood,key,syllables):
     # create the MIDIFile object with 1 track
     MyMIDI = MIDIFile(1)
-    syllables = [2,1,2,3,2,1,2,3,1,1,2,2,1,1,1,3,2,1,2,3,2,2,2,2,1,1,1,3,2,1,1,2]
-    mood = happy1
+    if (mood == 'mood1'):
+        mood = pass1
+    elif (mood == 'mood2'):
+        mood = happy1
+    elif (mood == 'mood3'):
+        mood = cool1
 
     # tracks are numbered from zero. times are measured in beats.
 
