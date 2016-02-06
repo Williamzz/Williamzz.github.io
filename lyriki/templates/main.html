@@ -6,39 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../static/main.css" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"> -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId      : '474228509428221',
-                xfbml      : true,
-                version    : 'v2.5'
-            });
-        };
-
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
 
     <style>
     .jumbotron { 
-        background-color: #ff9933; /* Not the original Orange */
+        background-color: #ff9933; /* Orange */
         color: #ffffff;
         opacity: 0.7;
+        margin: auto;
     }
     .bg-grey {
         background-color: #f6f6f6;
     }
     .pic{
-        background-image: url(http://www.claxtonguitars.com/mediafiles/home_images/3_thecomposer-custom-guitar-banner1.jpg);
+        background-image: url(./photos/guitar.jpg);
         z-index: -1;
         position: fixed;
         left: 0;
@@ -48,20 +33,18 @@
         background-size: cover;
         opacity: 0.8;
     }
-       .content {
-      /* Make the content take up half of the screen horizontally, but not larger than 500px */
+    .jumbo2 { 
+        background-color: #ff9933; /* Orange */
+        color: #000000;
+        opacity: 0.8;
+    }
+    .content {
       width: 70%;
       max-width: 1750px;
       height: 60%;
       max-height: 500px;
-
-      /* put a margin to the top and bottom of 100px, and center the content vertically */
       margin: auto;
-
-      /* put a border around the text content */
       padding: 50px;
-
-      /* Make the content's background white */
       background-color: white;
       opacity: 0.75;
       ;
@@ -80,18 +63,30 @@
     background-color: #fff;
     color: #000;
     }
-    
+
+    .modal-header, h4, .close {
+    background-color: #333;
+    color: #fff !important;
+    text-align: center;
+    font-size: 30px;
+    }
+
+    .modal-header, .modal-body {
+    padding: 40px 50px;
+    }
+
     </style>
     <div class="pic"></div>
     <div class="jumbotron text-center">
         <h1>Lyriki</h1> 
-        <p>Automatically put your lyrics to music!</p>
+        <p><em>Automatically put your lyrics to music!</em></p>
     </div>
+
     <div>
     <div class="text-center content">
     <h2>Step1:  Choose your mood:</h2>
-    <button class="btn">Passionate</button>    
-    <button class="btn">Emotional</button>
+    <button class="btn" onclick='Mood()'id='Passionate'>Passionate</button>
+    <button class="btn" onclick='Mood()'id='Emotional'>Emotional</button>
     <button class="btn">Happy</button>
     <button class="btn">Cool</button>
     <button class="btn">Mysterious</button>
@@ -110,41 +105,48 @@
     <button class="btn">B</button>
     </div>
     </div>
-    <div class="container-fluid text-center">
-        <h2>Enter your lyrics:</h2>
+
+    <div class="container-fluid text-center content">
+    <p></p>
+        <h2>Step3:  Enter your lyrics:</h2>
         <form class="form-inline" action="/get_lyrics" method="post">
-            <input type="text" class="form-control" size="50" name="lyrics" id="lyrics" placeholder="Your lyrics here">
-            <input type="submit" value="Submit">
+            <input type="text" class="form-control" size="50" name="lyrics" id="lyrics" line="30" placeholder="Your lyrics here">
+            <input type="submit" value="Magic!">
         </form>
-    </div>
+        <p>Your lyrics should not exceed 140 characters.</p>
+    </div> 
 
-    <div class="container-fluid bg-grey">
-    </div>
+    <div class="container-fluid text-center content">
+    <h2>Not the perfect Key?</h2>
+    <button class="btn"><strong>-</strong></button> 
+    <button class="btn"><strong>+</strong></button>
+    <button class="btn"><strong>Save & Export</strong></button>
+    </div> 
 
-       <div class="container-fluid text-center content">
+    <div class="container-fluid text-center content">
     <p>Producers:</p> 
      <div class="row">
       <div class="col-md-4">
-        <a href="Tai.jpg" class="thumbnail">
+        <a href="./photos/Tai.jpg" class="thumbnail">
           <p>Taisuke Yasuda</p> 
-          <img src="Tai.jpg" alt="Tai" style="width:150px;height:150px">
+          <img src="./photos/Tai.jpg" alt="Tai" style="width:150px;height:150px">
         </a>
       </div>
       <div class="col-md-4">
-        <a href="Will.jpg" class="thumbnail">
+        <a href="./photos/Will.jpg" class="thumbnail">
           <p>Zhen Zhou</p>
-          <img src="Will.jpg" alt="Will" style="width:150px;height:150px">
+          <img src="./photos/Will.jpg" alt="Will" style="width:150px;height:150px">
         </a>
       </div>
       <div class="col-md-4">
-        <a href="Riki.jpg" class="thumbnail">
+        <a href="./photos/Riki.jpg" class="thumbnail">
           <p>Riki Singh Khorana</p> 
-          <img src="Riki.jpg" alt="Riki" style="width:150px;height:150px">
+          <img src="./photos/Riki.jpg" alt="Riki" style="width:150px;height:150px">
         </a>
       </div>
     </div>
     </div>
-    
+
     <div class="text-center content">
     <p>Links:</p>
         <a href="https://www.facebook.com">facebook</a>
@@ -156,12 +158,43 @@
       Copyright 2016.
       Taisuke Yasuda, Zhen Zhou, Riki Khorana
     </div>
-    
+
+<!--         <div class="fixed-action-btn horizontal click-to-toggle" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red">
+      <i class="large mdi-navigation-menu"></i>
+    </a>
+    <ul>
+      <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+    </ul>
+    </div> -->
+
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '474228509428221',
+                xfbml      : true,
+                version    : 'v2.5'
+            });
+        };
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     <div
         class="fb-like"
         data-share="true"
         data-width="450"
         data-show-faces="true">
     </div>
+
+    
+
 </body>
 </html>
