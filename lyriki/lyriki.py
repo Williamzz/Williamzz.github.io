@@ -1,6 +1,7 @@
 from flask import Flask, request, session, g, redirect, url_for, \
      abort, render_template, flash
-     
+import lyriki_music
+
 # configuration
 DEBUG = True
 SECRET_KEY = 'development key'
