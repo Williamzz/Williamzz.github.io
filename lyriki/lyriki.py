@@ -17,6 +17,13 @@ def hello():
 def index():
     return render_template("index.html")
 
+@app.route('/get_lyrics', methods=['POST'])
+def get_lyrics():
+    lyrics = request.form.get('lyrics')
+    print('I think this worked')
+    print(lyrics)
+    return redirect('/main')
+
 @app.route("/main")
 def main():
     return render_template("main.html")
