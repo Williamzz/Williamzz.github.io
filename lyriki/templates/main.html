@@ -19,30 +19,27 @@
         margin: auto;
     }
     .pic{
-        background-image: url(../static/photos/guitar.jpg);
-        z-index: -1;
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background-size: cover;
-        opacity: 0.8;
-    }
-    .jumbo2 { 
-        background-color: #ff9933; /* Orange */
-        color: #000000;
-        opacity: 0.8;
+    background-image: url(../static/photos/guitar.jpg);
+    z-index: -1;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    opacity: 0.8;
     }
     .content {
       width: 70%;
       max-width: 1750px;
       height: 60%;
       max-height: 500px;
+      min-height: 200px;
       margin: auto;
       padding: 50px;
       background-color: white;
       opacity: 0.65;
+
     }
     .btn {
     padding: 10px 20px;
@@ -52,6 +49,7 @@
     transition: .2s;
     }
 
+/* On hover, the color of .btn will transition to white with black text */
     .btn:hover, .btn:focus {
     border: 1px solid #333;
     background-color: #fff;
@@ -69,21 +67,20 @@
     padding: 40px 50px;
     }
     
-
     #key_container {
-        margin: auto;
+    margin: auto;
     }
 
     .settings {
-
     list-style-type:none;
     margin:25px 0 0 0;
     padding:0;
+
     }
 
     .settings li {
     float:left;
-    margin:0 5px 0 0;
+    margin-left: 100px;
     width:100px;
     height:40px;
     position:relative;
@@ -119,7 +116,7 @@
     .settings label:hover {
     background:#DDD;
     }
-    
+
     .content1 {
       width: 70%;
       max-width: 1750px;
@@ -161,6 +158,7 @@
         </li>
         </ul>
         </div>
+
         <br><br><br>
         <h2>Step2:  Choose your Key:</h2>
         <div class="settings" id="key_container">
@@ -194,20 +192,18 @@
             <label for="b">B</label>
         </li>
         </ul>
+    <br><br>
+    <br><br>
     </div>
 
-    <br><br><br>
-
-    <div class="container-fluid text-center">
+    <div class=" text-center">
     <p></p>
         <h2>Step3:  Enter your Lyrics:</h2>
         <input type="text" class="form-control" size="50" name="lyrics" id="lyrics" line="30" placeholder="Your lyrics here"/>
-        <p>Your lyrics should not exceed 140 characters.</p>
+        <p><STRONG>(For optimal performance, use '/' to change line)</STRONG></p>
     </div> 
+    <input type="submit" value="Make a Song!" z-index=1>
 
-    <br><br>
-
-    <input type="submit" value="Make a Song!"/>
     </form>
     </div>
 
@@ -218,7 +214,7 @@
     <button class="btn"><strong>Save & Export</strong></button>
     </div> 
 
-   <div class="container-fluid text-center content1">
+    <div class="container-fluid text-center content1">
     <p><strong>Producers:</strong></p> 
      <div class="row">
       <div class="col-md-4":before>
@@ -250,18 +246,6 @@
       Taisuke Yasuda, Zhen Zhou, Riki Khorana
     </div>
 
-<!--         <div class="fixed-action-btn horizontal click-to-toggle" style="bottom: 45px; right: 24px;">
-    <a class="btn-floating btn-large red">
-      <i class="large mdi-navigation-menu"></i>
-    </a>
-    <ul>
-      <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-    </ul>
-    </div> -->
-
     <script>
         window.fbAsyncInit = function() {
             FB.init({
@@ -284,8 +268,6 @@
         data-width="450"
         data-show-faces="true">
     </div>
-
-    
 
 </body>
 </html>
