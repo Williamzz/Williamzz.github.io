@@ -2,8 +2,8 @@
 # reduces common combinations of vowels of one syllable
 def reduceIrregulars(word, length):
     totalReduce = 0
-    truncateList = ["ya", "yo", "oa", "ea", "ee", "oo", "ui", "au", "ou", 
-    "oi", "eu", "iou", "you"]
+    truncateList = ["ya", "yo", "ay", "oa", "ea", "ee", "oo", "ui", "au", "ou", 
+    "ie", "oi", "eu", "iou"]
     for i in range(len(word)):
         if word[i:i+length] in truncateList:
             totalReduce += 1
@@ -21,11 +21,7 @@ def countSyllables(word):
     for outliers in ["es", "ed"]:
         if word.endswith(outliers):
             count -= 1
-    if word[-2:-3] in ["ie"]:
-        count -= 1
     if word.endswith("e"):
         if word[-3] in ["a", "e", "i", "o", "u", "n", "l"]:
             count -= 1
     return count
-
-# words with "ue" in them (e.g. True, Fatigue) tend to act weird
