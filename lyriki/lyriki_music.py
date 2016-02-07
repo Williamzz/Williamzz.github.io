@@ -17,6 +17,8 @@ cs = [61,65,68]
 eb = [63,67,70]
 cm = [60,63,67]
 gm = [55,58,62]
+bb = [62,65,70]
+dm = [62,65,69]
 happy1 = [c,c,c,c,f,f,f,f,g,g,g,g,c,c,c,c,f,f,f,f,g,g,g,g,g,g,g,g,c,c,c,c]
 pass1 = [c,c,c,c,cs,cs,cs,cs,c,c,c,c,cs,cs,cs,cs,c,cs,eb,cs,c,cs,c,cs,c,c,c,c,cs,cs,c,cs]
 cool1 = [cm,cm,cm,cm,bb,bb,bb,bb,dm,dm,dm,dm,c,c,c,c,cm,cm,cm,cm,bb,bb,bb,bb,dm,dm,dm,dm,c,c,c,c]
@@ -30,7 +32,7 @@ def chordType(chord):
         return [ -12, -9, -5, 0, 3, 7, 12]
     elif chord == "M7":
         return [ -12, -8, -5, -1, 0, 4, 7, 11, 12]
-    elif chord == "M":
+    else:
         return [ -12, -8, -5, 0, 4, 7, 12]
 
 # helper function
@@ -167,7 +169,11 @@ def add_notes(MyMIDI,syllables,key,chords):
     for i in range(len(chords)):
         syllable = syllables[i]
         chord = chords[i]
-        note = generateNextNote(note,'M',key+60)
+        modes = dict()
+        if (tuple(chord) == tuple(cm) or tuple(chord) == tuple(dm) or tuple(chord) == tuple(gm)):
+            note = generateNextNote(note,'m',key+60)
+        else:
+            note = generateNextNote(note,'M',key+60)
         print(note)
         if (syllable != 0):
             duration = 1.0 / syllable    
